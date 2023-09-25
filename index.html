@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js" defer></script>
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title>ROCK PAPER SCISSORS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
 </head>
+
 <body>
-    
+
+    <div class="container">
+        <h1>ROCK PAPER SCISSORS</h1>
+        <div class="gameboard">
+            <div class="hand">
+                <p>Player</p>
+                <img class="img1" src="images/rock.png">
+            </div>
+
+            <div class="hand">
+                <p>Computer</p>
+                <img class="img2" src="images/paper.png">
+            </div>
+        </div>
+        <label for="choise">Choose a Hand:   </label>
+                <select name="choise" id="choise">
+                    <option value="rock">Rock</option>
+                    <option value="paper">Paper</option>
+                    <option value="scissors">Scissors</option>
+                </select>
+    </div>
+
+    <script src="main.js" charset="utf-8"></script>
+
 </body>
+
 </html>
