@@ -15,6 +15,7 @@ function playRound() {
     document.querySelectorAll("img")[0].setAttribute("src", playerImg);
     document.querySelectorAll("img")[1].setAttribute("src", computerImg);
 
+    document.getElementById("choice").value = "";
     if (playerSelection == computerSelection) {
         return 0;
     } else if (
@@ -67,6 +68,6 @@ function endGame() {
 }
 
 var activities = document.getElementById("choice");
-activities.addEventListener("change", function (e) {
+activities.addEventListener("input", function (e) {
     game();
 });
