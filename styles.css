@@ -26,6 +26,13 @@ h1 {
   color: #4ECCA3;
 }
 
+h3 {
+  font-family: 'Lobster', cursive;
+  text-shadow: 5px 0 #232931;
+  font-size: 2rem;
+  color: #4ECCA3;
+}
+
 p {
   font-size: 2rem;
   color: #4ECCA3;
@@ -49,4 +56,8 @@ select {
   border-radius: 5px;
   background-color: #232931; 
   color: #4ECCA3; 
+}
+
+.display-none {
+  display: none;
 }

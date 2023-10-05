@@ -2,6 +2,13 @@ const options = ['rock', 'paper', 'scissors'];
 let currentRound = 0;
 let humanCounter = 0;
 let machineCounter = 0;
+let activities = document.getElementById("choice");
+const mainContainer = document.querySelector(".gameboard").parentNode;
+const firstDiv = document.querySelector(".gameboard");
+const firstTitle = document.querySelector("h1");
+const updateTitle = document.createElement("h3");
+const select = document.querySelector("#choice");
+const label = document.querySelector("label");
 
 function computerPlay() {
     return options[Math.floor(Math.random() * options.length)];
@@ -31,7 +38,6 @@ function playRound() {
 
 function game() {
     let roundResult = playRound();
-
     if (roundResult == 1) {
         humanCounter += 1;
         currentRound += 1;
@@ -39,9 +45,8 @@ function game() {
         machineCounter += 1;
         currentRound += 1;
     }
-
+    updateTitle.textContent="";
     updateScore();
-
     if (currentRound >= 5) {
         endGame();
         return;
@@ -49,25 +54,22 @@ function game() {
 }
 
 function updateScore() {
-    document.querySelector("h1").style.fontSize = "3rem";
-    document.querySelector("h1").innerHTML = `Humans=${humanCounter} and Machines=${machineCounter} Round ${currentRound}/5 FIGHT AGAIN HUMAN!`;
+    updateTitle.textContent = `Humans=${humanCounter} and Machines=${machineCounter} Round ${currentRound}/5 FIGHT AGAIN HUMAN!`;
+    mainContainer.insertBefore(updateTitle, firstDiv);
 }
 
 function endGame() {
-    document.querySelector("h1").style.fontSize = "6rem";
-    console.log(machineCounter, humanCounter)
+    updateTitle.textContent="";
     if (machineCounter > humanCounter) {
-        document.querySelector("h1").innerHTML = "Machines have won!!! Your world is ours!! Final score is Machines=" + machineCounter + " and Humans=" + humanCounter +" REFRESH TO PLAY AGAIN";
+        firstTitle.textContent = "Machines have won!!! Your world is ours!! Final score is Machines=" + machineCounter + " and Humans=" + humanCounter +" REFRESH TO PLAY AGAIN";
     } else {
-        document.querySelector("h1").innerHTML = "Humans have won!!! We will send you our best antivirus!!  Final score is Humans=" + humanCounter + " and Machines=" + machineCounter +" REFRESH TO PLAY AGAIN";
+        firstTitle.textContent = "Humans have won!!! We will send you our best antivirus!!  Final score is Humans=" + humanCounter + " and Machines=" + machineCounter +" REFRESH TO PLAY AGAIN";
     }
-    document.querySelector(".gameboard").style.display='none';
-    document.querySelector("select").style.display='none';
-    document.querySelector("label").style.display='none';
-
+    firstDiv.classList.add('display-none');
+    label.classList.add('display-none');
+    select.classList.add('display-none');
 }
 
-var activities = document.getElementById("choice");
 activities.addEventListener("input", function (e) {
     game();
 });
