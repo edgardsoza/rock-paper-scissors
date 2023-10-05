@@ -61,13 +61,21 @@ function updateScore() {
 function endGame() {
     updateTitle.textContent="";
     if (machineCounter > humanCounter) {
-        firstTitle.textContent = "Machines have won!!! Your world is ours!! Final score is Machines=" + machineCounter + " and Humans=" + humanCounter +" REFRESH TO PLAY AGAIN";
+        firstTitle.textContent = "Machines have won!!! Your world is ours!! Final score is Machines=" + machineCounter + " and Humans=" + humanCounter;
     } else {
-        firstTitle.textContent = "Humans have won!!! We will send you our best antivirus!!  Final score is Humans=" + humanCounter + " and Machines=" + machineCounter +" REFRESH TO PLAY AGAIN";
+        firstTitle.textContent = "Humans have won!!! We will send you our best antivirus!!  Final score is Humans=" + humanCounter + " and Machines=" + machineCounter;
     }
     firstDiv.classList.add('display-none');
     label.classList.add('display-none');
     select.classList.add('display-none');
+    const restartButton = document.createElement("input");
+    restartButton.type = "button";
+    restartButton.value = "Play Again";
+    restartButton.id = "restartButton";
+    mainContainer.appendChild(restartButton)
+    restartButton.addEventListener("click", function () {
+        location.reload();
+    });
 }
 
 activities.addEventListener("input", function (e) {

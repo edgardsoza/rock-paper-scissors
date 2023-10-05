@@ -61,3 +61,11 @@ select {
 .display-none {
   display: none;
 }
+
+#restartButton {
+  background-color: #232931; 
+  color: #4ECCA3;
+  font-size: 3rem;
+  width: 15rem;
+  height: 5rem;
+}
