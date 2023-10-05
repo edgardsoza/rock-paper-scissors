@@ -22,7 +22,7 @@ h1 {
   margin: 30px;
   font-family: 'Lobster', cursive;
   text-shadow: 5px 0 #232931;
-  font-size: 6rem;
+  font-size: 5rem;
   color: #4ECCA3;
 }
 
@@ -50,7 +50,7 @@ label {
 }
 
 select {
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding: 5px;
   border: 2px solid #4ECCA3;
   border-radius: 5px;
